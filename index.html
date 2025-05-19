@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SE兼Web制作者のポートフォリオサイト。HTML/CSS/WordPressに対応。">
+  <title>ポートフォリオ | yusukeh</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+    .works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .work-item {
+      background-color: #fff;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #eee;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>SE × Webサイト制作｜HTML・CSS・WordPress</p>
+  </header>
+
+  <section>
+    <h2>自己紹介</h2>
+    <p>大手IT企業にてAI分野のSEとして勤務しながら、副業でWebサイト制作を行っています。<br>
+    論理的で丁寧な構成と、ユーザー目線を大切にしたデザインを心がけています。</p>
+  </section>
+
+  <section>
+    <h2>制作実績</h2>
+    <div class="works">
+      <div class="work-item">
+        <h3>架空LPサイト</h3>
+        <p>HTML/CSSで制作した1ページ完結型のランディングページ。</p>
+        <a href="#" target="_blank">デモを見る</a>
+      </div>
+      <div class="work-item">
+        <h3>WordPressカスタマイズ</h3>
+        <p>既存テーマをベースにした、ブログ型サイトの構築とデザイン調整。</p>
+        <a href="#" target="_blank">デモを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>スキル</h2>
+    <ul>
+      <li>HTML / CSS / JavaScript（初級）</li>
+      <li>WordPressカスタマイズ</li>
+      <li>レスポンシブ対応</li>
+      <li>SEO基本対応</li>
+      <li>GitHub / Netlify</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>お問い合わせ</h2>
+    <p>お仕事のご相談・ご依頼は、<a href="mailto:yourname@gmail.com">yourname@gmail.com</a> までお気軽にご連絡ください。</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Your Name | ポートフォリオサイト
+  </footer>
+</body>
+</html>
