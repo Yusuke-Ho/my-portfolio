@@ -8,51 +8,77 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Yusukeh</h1>
-    <p>SE × Webサイト制作｜HTML・CSS・WordPress</p>
-  </header>
+  <div id="app">
+    <header>
+      <h1>{{ name }}</h1>
+      <p>{{ tagline }}</p>
+    </header>
 
-  <section>
-    <h2>自己紹介</h2>
-    <p>大手IT企業にてAI分野のSEとして勤務しながら、副業でWebサイト制作を行っています。<br>
-    論理的で丁寧な構成と、ユーザー目線を大切にしたデザインを心がけています。</p>
-  </section>
+    <section>
+      <h2>自己紹介</h2>
+      <p v-html="about"></p>
+    </section>
 
-  <section>
-    <h2>制作実績</h2>
-    <div class="works">
-      <div class="work-item">
-        <h3>架空LPサイト</h3>
-        <p>HTML/CSSで制作した1ページ完結型のランディングページ。</p>
-        <a href="https://enchanting-tanuki-a28506.netlify.app/" target="_blank">デモを見る</a>
+    <section>
+      <h2>制作実績</h2>
+      <div class="works">
+        <div class="work-item" v-for="work in works" :key="work.title">
+          <h3>{{ work.title }}</h3>
+          <p>{{ work.desc }}</p>
+          <a :href="work.link" target="_blank">デモを見る</a>
+        </div>
       </div>
-      <div class="work-item">
-        <h3>WordPressカスタマイズ</h3>
-        <p>既存テーマをベースにした、ブログ型サイトの構築とデザイン調整。</p>
-        <a href="#" target="_blank">デモを見る</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>スキル</h2>
-    <ul>
-      <li>HTML / CSS / JavaScript（初級）</li>
-      <li>WordPressカスタマイズ</li>
-      <li>レスポンシブ対応</li>
-      <li>SEO基本対応</li>
-      <li>GitHub / Netlify</li>
-    </ul>
-  </section>
+    <section>
+      <h2>スキル</h2>
+      <ul>
+        <li v-for="skill in skills" :key="skill">{{ skill }}</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>お問い合わせ</h2>
-    <p>お仕事のご相談・ご依頼は、<a href="mailto:yourname@gmail.com">yusukeh.dev720@gmail.com</a> までお気軽にご連絡ください。</p>
-  </section>
+    <section>
+      <h2>お問い合わせ</h2>
+      <p>お仕事のご相談・ご依頼は、<a :href="'mailto:' + email">{{ email }}</a> までお気軽にご連絡ください。</p>
+    </section>
 
-  <footer>
-    &copy; 2025 Your Name | ポートフォリオサイト
-  </footer>
+    <footer>
+      &copy; 2025 {{ name }} | ポートフォリオサイト
+    </footer>
+  </div>
+  <!-- Vue.js CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          name: 'Yusukeh',
+          tagline: 'SE × Webサイト制作｜HTML・CSS・WordPress',
+          about: `大手IT企業にてAI分野のSEとして勤務しながら、副業でWebサイト制作を行っています。<br>論理的で丁寧な構成と、ユーザー目線を大切にしたデザインを心がけています。`,
+          works: [
+            {
+              title: '架空LPサイト',
+              desc: 'HTML/CSSで制作した1ページ完結型のランディングページ。',
+              link: 'https://enchanting-tanuki-a28506.netlify.app/'
+            },
+            {
+              title: 'WordPressカスタマイズ',
+              desc: '既存テーマをベースにした、ブログ型サイトの構築とデザイン調整。',
+              link: '#'
+            }
+          ],
+          skills: [
+            'HTML / CSS / JavaScript（初級）',
+            'WordPressカスタマイズ',
+            'レスポンシブ対応',
+            'SEO基本対応',
+            'GitHub / Netlify'
+          ],
+          email: 'yusukeh.dev720@gmail.com'
+        }
+      }
+    }).mount('#app');
+  </script>
 </body>
 </html>
